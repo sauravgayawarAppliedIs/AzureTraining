@@ -1,0 +1,55 @@
+try
+{
+    $StartNumber = Read-Host "Enter Start Number !"
+    $StopNumber = Read-Host "Enter Stop Number !"
+    $MaxNumberDisplayedInALine = Read-Host "Max Number of Number Displayed per Line !"
+    $Count = 0
+    $ValuesInLine = "";
+	
+    for($i = [int]$StartNumber; $i -le [int]$StopNumber; [int]$i++)
+    {
+        $CurrentText = $i;
+        If(($i/15) -eq [int]($i/15))
+		    {
+			    $CurrentText = "FIZZBUZZ";
+		    }
+		    Else 
+		    {
+			    If(($i/3) -eq [int]($i/3))
+			    {
+				    $CurrentText = "FIZZ";
+			    }
+                Else
+                {
+                    If(($i/5) -eq [int]($i/5))
+			        {
+				        $CurrentText = "BUZZ";
+			        }
+			        Else
+			        {
+				        $CurrentText = $i;
+			        }
+                }
+		    }
+
+        If ($Count -eq [int]$MaxNumberDisplayedInALine)
+        {
+            Write-Host $ValuesInLine;
+            $ValuesInLine = "";
+            $Count = 0;
+
+        }
+        Else
+        {
+            $ValuesInLine = $ValuesInLine + " " + $CurrentText;
+            $Count = $Count + 1;
+        }
+
+    
+    }
+    Write-Host $ValuesInLine;
+}
+catch
+{
+    "An exception has occured";
+}
