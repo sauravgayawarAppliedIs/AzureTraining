@@ -1,0 +1,11 @@
+# Install AzureRM
+Install-module AzureRM
+
+# login AzureAccount
+login-azureRmaccount
+
+#set AzureRM Context
+Set-AzureRmContext -SubscriptionId "xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx"
+
+#get AzureRM Context
+Get-AzureRmContext
