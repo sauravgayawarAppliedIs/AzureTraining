@@ -1,4 +1,4 @@
-$folder = "D:\AzureTraining\Files"
+$folder = "D:\DownloadedFiles"
 $url= "https://cdn.houseplans.com/product/q5qkhirat4bcjrr4rpg9fk3q94/w1024.jpg?v=8"
 $req = [System.Net.HttpWebRequest]::Create($url)
 $req.Method = "HEAD"
